@@ -1,0 +1,38 @@
+{% extends 'base/admin_home.html' %}
+{% load crispy_forms_filters %}
+{% block content %}
+<h4 class="card-title">Student List</h4>
+<table class="table table-bordered" style="text-align:center">
+    <tr>
+        <th>Photo</th>
+        <th>Full Name</th>
+        <th>Date Of Birth</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>Department</th>
+        <th>Phone</th>
+        <th>Registration No.</th>
+        <th>Email</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    {% for row in data %}
+    <tr>
+        <td><img src="{{ row.photo.url }}" class="rounded-circle"/></td>
+        <td>{{ row.name }}</td>
+        <td>{{ row.dob }}</td>
+        <td>{{ row.gender }}</td>
+        <td>{{ row.address }}</td>
+        <td>{{ row.department }}</td>
+        <td>{{ row.phone }}</td>
+        <td>{{ row.regno }}</td>
+        <td>{{ row.email }}</td>
+        <td><form action="{% url 'updtstud' row.id %}">
+            <button type="submit" class="btn btn-outline-primary">Update</button></form> </td>
+        <td><form action="{% url 'delstud' row.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline-danger" >Delete</button> </form></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
