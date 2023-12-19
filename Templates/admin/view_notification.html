@@ -1,0 +1,33 @@
+{% extends 'base/admin_home.html' %}
+{% load crispy_forms_filters %}
+{% block content %}
+<h5 class="py-3 mb-0">Notifications</h5>
+{% for row in data %}
+                  <div class="dropdown-divider"></div>
+                  <div class="dropdown-item preview-item" style="color:white;">
+                    <div class="preview-thumbnail d-flex">
+                      <div class="preview-icon rounded-circle">
+                        <i class="mdi mdi-calendar text-success"></i>
+                      </div>
+                        <div class="btn-group preview-item-content ml-auto" role="group">
+                          <form action="{% url 'updtnotif' row.id  %}">
+                              <button type="submit" class="btn btn-link">Edit</button>
+                          </form>
+                          <form action="{% url 'delnotif' row.id  %}" method="POST">
+                              {% csrf_token %}
+                              <button type="submit" class="btn btn-link">Remove</button>
+                          </form>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject mb-1">{{row.date}}</p>
+                      <p class="text-muted text-wrap mb-0"> {{row.description}} </p>
+                    </div>
+                  </div>
+{% endfor %}
+                    <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item" href="{% url 'allnotif' %}">
+                  <p class="p-3 mb-0 text-center" style="color:white;">See all notifications</p>
+                  </a>
+
+{% endblock %}

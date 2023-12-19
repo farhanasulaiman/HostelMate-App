@@ -37,3 +37,16 @@ class Parent(models.Model):
     regno = models.ForeignKey('Student', on_delete=models.DO_NOTHING)  # connect parent to student using regno
     phone = models.CharField(max_length=12)
     email = models.EmailField()
+
+
+# food-manage-model
+class Weekly_Foods(models.Model):
+    day = models.CharField(max_length=10)
+    breakfast = models.CharField(max_length=50)
+    lunch = models.CharField(max_length=50)
+    dinner = models.CharField(max_length=50)
+
+
+class Notifications(models.Model):
+    date = models.DateField()
+    description = models.TextField()

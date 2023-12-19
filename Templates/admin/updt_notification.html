@@ -1,0 +1,17 @@
+{% extends 'base/admin_home.html' %}
+{% load crispy_forms_filters %}
+{% block content %}
+<h5 class="py-3 mb-0">Update Notification</h5>
+<div class="container">
+<!--    <div class="row">-->
+<!--        <h4 class="py-3 mb-0">Update Notification</h4>-->
+<!--    </div>-->
+<div class="row">
+<form action="#" method="POST">
+    {% csrf_token %}
+    {{ updt_form|crispy }}
+    <button type="submit" class="form-control btn submit px-3">Update</button>
+</form>
+        </div>
+</div>
+{% endblock %}

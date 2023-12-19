@@ -1,0 +1,21 @@
+{% extends 'base/student_home.html' %}
+{% load crispy_forms_filters %}
+{% block content %}
+<h5 class="p-3 mb-0">Food Menu</h5>
+<div class="container-fluid">
+<div class="row">
+  {% for row in data %}
+  <div class="col-md-4 mb-4">
+    <div class="card bg-danger mb-3" style="max-width: 20rem;">
+      <div class="card-header text-center"><h5 class="card-title">{{row.day}}</h5></div>
+      <div class="card-body">
+        <p class="card-text">Breakfast: {{row.breakfast}}</p>
+          <p class="card-text">Lunch: {{row.lunch}}</p>
+          <p class="card-text">Dinner: {{row.dinner}}</p>
+   </div>
+</div>
+  </div>
+      {% endfor %}
+  </div>
+</div>
+{% endblock %}

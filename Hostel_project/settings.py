@@ -13,6 +13,8 @@ import os.path
 from pathlib import Path
 from unittest.mock import Base
 
+import Hostel_App.context_processors
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -74,6 +76,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'Hostel_App.context_processors.view_notification',
             ],
         },
     },
@@ -84,10 +87,20 @@ WSGI_APPLICATION = 'Hostel_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "Hosteldb",
+        "USER": "postgres",
+        "PASSWORD": "1234",
+        "HOST": "LOCALHOST",
+        "PORT": "5432",
     }
 }
 

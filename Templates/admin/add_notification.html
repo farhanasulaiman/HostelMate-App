@@ -1,0 +1,17 @@
+{% extends 'base/admin_home.html' %}
+{% load crispy_forms_filters %}
+{% block content %}
+<h5 class="py-3 mb-0">New Notifications</h5>
+<div class="container">
+<!--    <div class="row">-->
+<!--            <h1 class="text-center caption" >Add Notifications here!</h1>-->
+<!--        </div>-->
+    <div class="row">
+<form action="#" method="POST">
+    {% csrf_token %}
+    {{ notif_form|crispy }}
+    <button type="submit" class="form-control btn submit px-3">Add</button>
+</form>
+        </div>
+</div>
+{% endblock %}

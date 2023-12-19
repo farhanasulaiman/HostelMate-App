@@ -1,12 +1,12 @@
 {% extends 'base/admin_home.html' %}
 {% load crispy_forms_filters %}
 {% block content %}
+<h5 class="py-3 mb-0">Update Student Record</h5>
 <div class="container">
+<!--    <div class="row">-->
+<!--            <h1 class="text-center caption" >Update Student Record</h1>-->
+<!--        </div>-->
     <div class="row">
-        <div class="col-md-8">
-            <h1 class="text-center caption" >Update Student Record</h1>
-        </div>
-        <div class="col-md-8">
 <form action="#" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ stud_form.name|as_crispy_field }}
@@ -18,13 +18,12 @@
     {{ stud_form.regno|as_crispy_field }}
     {{ stud_form.email|as_crispy_field  }}
      <div class="d-flex">
-        <img src="{{ stud_form.instance.photo.url }}" class="rounded-circle" width="100px" height="100px" />
+        <img src="{{ stud_form.instance.photo.url }}" class="rounded-circle" width="90px" height="90px" />
         {{ stud_form.photo|as_crispy_field }}
     </div>
-
-    <button type="submit" class="form-control btn submit px-3">Update</button>
+    <div class="mt-3">
+    <button type="submit" class="btn btn-outline-danger1 form-control rounded-pill submit px-3">Update</button></div>
 </form>
-        </div>
-    </div>
+     </div>
 </div>
 {% endblock %}

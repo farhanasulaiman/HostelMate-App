@@ -7750,10 +7750,14 @@ h3, .h3 {
   font-size: 1.75rem; }
 
 h4, .h4 {
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+   color :#6c7293;
+   }
 
 h5, .h5 {
-  font-size: 1.25rem; }
+  font-size: 1.25rem;
+   color :#6c7293;
+   }
 
 h6, .h6 {
   font-size: 1rem; }
@@ -9645,6 +9649,16 @@ fieldset:disabled .wizard > .actions a,
     .btn-outline-warning:not(:disabled):not(.disabled):active:focus, .btn-outline-warning:not(:disabled):not(.disabled).active:focus,
     .show > .btn-outline-warning.dropdown-toggle:focus {
       box-shadow: 0 0 0 0.2rem rgba(255, 171, 0, 0.5); }
+
+btn-outline-danger1 {
+  color: #fc424a;
+  border-color: #fc424a; }
+  .btn-outline-danger1:hover {
+    color: #fff;
+    background-color: #fc424a;
+    border-color: #fc424a; }
+  .btn-outline-danger1:focus, .btn-outline-danger1.focus {
+    box-shadow: 0 0 0 0.2rem rgba(252, 66, 74, 0.5); }
 
 .btn-outline-danger {
   color: #fc424a;

@@ -1,7 +1,10 @@
 {% extends 'base/admin_home.html' %}
 {% load crispy_forms_filters %}
 {% block content %}
-<h4 class="card-title">Parent List</h4>
+<h5 class="py-3 mb-0">Parent List</h5>
+<div class="container">
+    <div class="row">
+<!--            <h1 class="text-center caption" >Parent List</h1>-->
 <table class="table table-bordered" style="text-align:center">
     <tr>
         <th>Full Name</th>
@@ -28,4 +31,7 @@
     </tr>
     {% endfor %}
 </table>
+
+    </div>
+</div>
 {% endblock %}
